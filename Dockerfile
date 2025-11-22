@@ -2,12 +2,11 @@ FROM python:3.8.10
 
 # Install OpenCV dependencies
 RUN apt-get update && apt-get install -y \
-    libgl1-mesa-glx \
-    libglib2.0-0 \
+    ffmpeg \
     libsm6 \
     libxext6 \
     libxrender1 \
-    libgl1
+    libgl1-mesa-glx
 
 WORKDIR /app
 
