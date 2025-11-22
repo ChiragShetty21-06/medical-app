@@ -1,4 +1,4 @@
-FROM python:3.8.10
+FROM python:3.10-slim
 
 # Install OpenCV dependencies
 RUN apt-get update && apt-get install -y \
@@ -6,7 +6,8 @@ RUN apt-get update && apt-get install -y \
     libsm6 \
     libxext6 \
     libxrender1 \
-    libgl1-mesa-glx
+    libgl1-mesa-glx && \
+    rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
 
